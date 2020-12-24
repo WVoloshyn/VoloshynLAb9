@@ -1,0 +1,195 @@
+header{
+    text-align: center;
+    background-color: #e6c867;
+    color: white;
+    margin: 20px 0 20px 0;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.pic{
+    display: flex;
+    width: 55%;
+    height: 50%;
+}
+
+input{
+    display: none;
+}
+
+
+main{
+    background-color: #77726b;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 10px;
+}
+
+.items{
+    order: -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 10px;
+    font-size: 10px;
+}
+.menu > label{
+
+    background-color:  #c50d0d;
+    color: rgb(199, 117, 117);
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+
+#Tor:checked ~ .items > :not(.cake),
+#Pir:checked ~ .items > :not(.pirig),
+#Tis:checked ~ .items > :not(.tistechko),
+#Rul:checked ~ .items > :not(.Rulet),
+#Sir:checked ~ .items > :not(.Sirnik)
+{
+    display: none;
+}
+.menu > label:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#Tor:checked ~ .menu [for="Tor"],
+#Pir:checked ~ .menu [for="Pir"],
+#Tis:checked ~ .menu [for="Tis"],
+#Rul:checked ~ .menu [for="Rul"],
+#Sir:checked ~ .menu [for="Sir"],
+#SkipAll:checked ~ .menu [for="SkipAll"] {
+    background-color: rgb(3, 3, 1);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.smakotacontent:hover{
+    transform: scale(1.05);
+    z-index: 1;
+}
+.smakotacontent{
+    border-radius: 5px;
+    background-color: white;
+    
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+}
+
+.call{
+    position: relative;
+    border-top: 5px solid #f5bdb3;
+    padding-left: 10px;
+}
+
+
+
+footer{
+    
+    color: rgb(0, 0, 0);
+}
+.year{
+    display: inline;
+    float: right;
+}
+.cont{
+    display: inline;
+}
+footer > a{
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
+@media (max-width: 800px){
+
+    main{
+        grid-template-columns: 100%;
+    }
+    .menu{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .items{
+        order: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product{
+        display: flex;
+        flex-flow: column;
+    }
+    .img{
+        width: 100%;
+    }
+    .year{
+        float: right;
+    }
+    .cont{
+        display: block;
+    }
+
+    .cake .product > p::before,
+    .tistechko .product > p::before,
+    .pirig .product > p::before,
+    .Rulet .product > p::before,
+    .Sirnik .product > p::before{
+        display: flex;
+    }
+
+   
+    footer > .year{
+        display: inline;
+        
+    }
+}
+
+
+
+
+
+@media (max-width: 500px){
+    .menu{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .items{
+        grid-template-columns: 1fr;
+    }
+    .contacts{
+        grid-template-columns: 6fr;
+        
+    }
+    .year{
+        display: block;
+        float:left;
+    }
+    .cont{
+        display: block;
+    }
+    a{
+        display:block;
+    }
+}
